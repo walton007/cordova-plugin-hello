@@ -1,45 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.example.hello"
-        version="0.7.0">
 
-  <name>Hello2</name>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.issc.datapath"
+    version="0.1.0">
+  <name>SPRTPrinter</name>
+  <description>SPRTPrinter Plugin</description>
+  <author>walton.wang</author>
+  <repo>https://github.com/walton007/cordova-plugin-hello.git</repo>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/hello.js" target="js/hello.js"/>
-
-  <js-module src="www/hello.js" name="hello">
-    <clobbers target="hello" />
-  </js-module>
-
-  <platform name="android">
-
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Hello">
-        <param name="android-package" value="com.example.plugin.Hello"/>
-      </feature>
-    </config-file>
-
-    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
-  </platform>
+  <asset src="www/sprtprinter.js" target="plugins/com.issc.datapath/js/sprtprinter.js"/>
 
   <platform name="ios">
-    
-    <config-file target="config.xml" parent="/widget">
-      <feature name="Hello">
-        <param name="ios-package" value="HWPHello" />
+    <js-module src="www/sprtprinter.js" name="sprtprinter">
+      <clobbers target="cordova.plugins.sprtprinter" />
+    </js-module>
+
+    <source-file src="src/ios/CDVSPRTPrinterPlugin.m" />
+    <source-file src="src/ios/SPRTPrinter.m" />
+
+    <header-file src="src/ios/CDVSPRTPrinterPlugin.h" />
+    <header-file src="src/ios/SPRTPrinter.h" />
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="SPRTPrinter">
+        <param name="ios-package" value="CDVSPRTPrinterPlugin" />
       </feature>
     </config-file>
 
-    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
-    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
   </platform>
 
-  <platform name="wp7">
-    <source-file src="src/wp7/Hello.cs"/>
-  </platform>
 
 </plugin>
