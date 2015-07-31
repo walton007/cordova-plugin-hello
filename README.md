@@ -1,13 +1,13 @@
-# Cordova Hello World Plugin
+# Cordova SPRT printer Plugin
 
-Simple plugin that returns your string prefixed with hello.
+plugin that can be used to connect to sprt t9i printer.
+support iOS only
 
-Greeting a user with "Hello, world" is something that could be done in JavaScript. This plugin provides a simple example demonstrating how Cordova plugins work.
 
 ## Using
 Clone the plugin
 
-    $ git clone https://github.com/don/cordova-plugin-hello.git
+    $ git clone https://github.com/don/cordova-plugin-sprtprinter.git
 
 Create a new Cordova Project
 
@@ -16,7 +16,7 @@ Create a new Cordova Project
 Install the plugin
 
     $ cd hello
-    $ cordova plugin add ../cordova-plugin-hello
+    $ cordova plugin add ../cordova-plugin-sprtprinter
     
 
 Edit `www/js/index.js` and add the following code inside `onDeviceReady`
