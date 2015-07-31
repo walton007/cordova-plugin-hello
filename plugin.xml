@@ -31,6 +31,14 @@
       </feature>
     </config-file>
 
+    <config-file target="*-Info.plist" parent="UISupportedExternalAccessoryProtocols">
+      <array>
+          <string>com.issc.datapath</string>
+      </array>
+    </config-file>
+
+    <framework src="ExternalAccessory.framework" />
+
   </platform>
 
 
